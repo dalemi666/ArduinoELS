@@ -1,6 +1,12 @@
 # ArduinoELS
 Arduino 1.0 based ELS (Electronic Lead Screw) controller for semi-CNC lathes
 
+
+DOCUMENTATION <br>
+See my wiki page: <br>
+https://github.com/dalemi666/ArduinoELS/wiki <br>
+
+
 MIT License
 
 Copyright (c) 2022 Emilio D'Alessandro
