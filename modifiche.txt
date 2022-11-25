@@ -1,0 +1,3 @@
+1) ho inserito l'"alternate cut" che era stato testato in elsServo4_MOD
+2) ho sostituito in "trhead" il valore di 4096 con la variabile 'latheEncRes' che non era stato aggiornata fino ad oggi.
+3) Ho inserito in SerialComm la comunicazione del numero di giri dell'encoder, utile per Giacomo per fare le bobbine
