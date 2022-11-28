@@ -34,6 +34,12 @@ Theese three parameters are listed on lines 24-26 of ArduinoELS.ino file, and mu
 
 ![Encoders config](web/encoder%20config.png)
 
+# MECHANICAL ASSEMBLY
+![Front view of my lathe](web/lathe_front.png)
+![Rear view of my lathe](web/lathe_rear.png)
+![Spindle encoder](web/spindle_encoder.png)
+![Servo encoder](web/servo_encoder.png)
+
 # TODO
 * Translate all my variable names and comments from Italian to English...
 
