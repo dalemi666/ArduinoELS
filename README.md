@@ -35,7 +35,7 @@ Arduino UNO based ELS (Electronic Lead Screw) controller for semi-CNC lathes
 * Translate all my variable names and comments from Italian to English...
 
 
-# LICENCE
-[MIT licence](web/LICENCE.md)
+# LICENSE
+[GPL3 licence](LICENSE.md)
 
 
