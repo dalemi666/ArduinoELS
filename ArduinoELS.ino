@@ -20,9 +20,12 @@ Encoder servoEnc(3, 5);
 #include <Wire.h>
 LCD16x2 lcd;
 
-// main
-double latheEncRes    = 2048;
-double servoEncRes    = 4300.8;   //  256 step/rev * 4X Encoder read * 4.2 rapporto pulegge
+// USER PARAMETERS
+double latheEncRes    = 2048;     // My lathe encoder resolution is 512 ppr --> Library read 4x --> 2048 --> lathe spindle/encoder ratio = 1/1 --> 2048 STEP/REV of lathe spindle
+double servoEncRes    = 4300.8;   // My servo encoder resolution is 256 ppr --> Library read 4x --> 1024 --> motor encoder/lead screw ratio = 4.2/1 --> 4300.8 STEP/REV of lead screw
+double distOneRev     = 1.04;     // Movement of lathe tool for 1 revolution of lead screw
+
+// working vars
 double passo          = 0.1;
 double rapporto       = 0;
 double TPI            = 0;
@@ -37,7 +40,7 @@ int    menuCheck      = 0;
 double moveDist       = 0;
 double endThread      = 0;
 int    screwDir       = 1;
-double alternateCut   = 4300.8 * (0.1 / 1.04);  // E' lo spostamneto Dx alternato in aventi ed in dietro dell'utensile durante la filettatura. 4300.8 corripsonde ad un giro della vite madre, quindi 1.04 mm
+double alternateCut   = 4300.8 * (0.1 / distOneRev);  // E' lo spostamneto Dx alternato in aventi ed in dietro dell'utensile durante la filettatura. 4300.8 corripsonde ad un giro della vite madre, quindi 1.04 mm
 
 // serialComm
 long   currentMicros  = 0;
@@ -181,11 +184,11 @@ void loop()
       break;
   }
   ////////////////////////////////////////////////////////////
-  // Aggiorna il rapporto ad ogni cambio funzione
+  // Update the ratio every loop
   ////////////////////////////////////////////////////////////
-  // se l'encoder del mandrino procede per 4096 step e quello della vite madre per 4300.8 step 
-  // si ha un rapporto 1/1. Con tale rapporto (1/1) per ciascun giro del mandrino il carro avanza 
-  // esattamente di 1.04 mm (misurati con calibro)
-  rapporto = (latheEncRes / servoEncRes) * 1.04 / passo;
+  // When the lathe spindle rotate for exactly 1 turn (2048 steps) 
+  // and the lead screw rotate exactly 1 turn (4300.8 steps) the 
+  // movement of the lathe tool is in my case exactly 1.04 mm, 
+  // measured using a digital caliper..
+  rapporto = (latheEncRes / servoEncRes) * distOneRev / passo;
 }
-

@@ -26,10 +26,13 @@ Arduino UNO based ELS (Electronic Lead Screw) controller for semi-CNC lathes
 * H-Bridge outputs (A, B) --> Servo motor power lines 
 
 ## Encoders settings
-* AMT102 Encoders resolution set to 48 cpr --> [AMT102-V-datasheet.pdf](web/AMT102-V-datasheet.pdf)
+* AMT102 Encoders resolution can be set changing deep switch, take a look at the  [AMT102-V-datasheet.pdf](web/AMT102-V-datasheet.pdf)
+* My lathe encoder is set to 512 ppr and is readden by encoder library in 4x mode, giving a total of 2048 step per revolution of the encoder. The ratio between the encoder and the spindle is 1/1 so for every spindle turn I have 2048 steps.
+* The encoder mounted on the servomotor shaft is set to 256 ppr, and is readden in 4x mode by library producing 1024 step per motor revolution. The ratio between the motor and the lead screw of the lathe is 4.2/1, so for every lead screw turn I have 1024*4.2 = 4300.8 steps.
+* The distance the tool moves for every lead screw turn is in my machine exactly 1.04 mm, measured using a digital caliper.
+Theese three parameters are listed on lines 24-26 of ArduinoELS.ino file, and must be changed according to your machine settings.
 
-# PROJECT DESCRIPTION
-* Work in progress...
+![Encoders config](web/encoder%20config.png)
 
 # TODO
 * Translate all my variable names and comments from Italian to English...

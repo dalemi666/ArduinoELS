@@ -49,7 +49,7 @@ void thread()
       // Per prima cosa imposto il valore dell'encoder del servo come se fosse in sincronia
       // screwDir cambia il segno
       servoEnc.write(latheEnc.read()/rapporto * screwDir);  
-      endThread = servoEnc.read() + (lenght * servoEncRes / 1.04) * screwDir;
+      endThread = servoEnc.read() + (lenght * servoEncRes / distOneRev) * screwDir;
       // alternateDir cambia la direzione dello spostamento dell'utensile ad ogni passata di +- 0.2 mm
       alternateCut = alternateCut * -1;
       if(screwDir == 1)

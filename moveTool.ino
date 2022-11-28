@@ -6,7 +6,7 @@ void moveTool()
 {
   // imposto il SP al valore attuale di servoEnc
   pidSP = servoEnc.read();
-  moveDist = servoEnc.read() + moveDist * servoEncRes / 1.04;
+  moveDist = servoEnc.read() + moveDist * servoEncRes / distOneRev;
 
   if(moveDist > servoEnc.read())
   {
