@@ -25,7 +25,7 @@ Arduino UNO based ELS (Electronic Lead Screw) controller for semi-CNC lathes
 * GND is common to all boards
 * H-Bridge outputs (A, B) --> Servo motor power lines 
 
-## Encoders settings
+# Encoders settings
 * AMT102 Encoders resolution can be set changing deep switch, take a look at the  [AMT102-V-datasheet.pdf](web/AMT102-V-datasheet.pdf)
 * My lathe encoder is set to 512 ppr and is readden by encoder library in 4x mode, giving a total of 2048 step per revolution of the encoder. The ratio between the encoder and the spindle is 1/1 so for every spindle turn I have 2048 steps.
 * The encoder mounted on the servomotor shaft is set to 256 ppr, and is readden in 4x mode by library producing 1024 step per motor revolution. The ratio between the motor and the lead screw of the lathe is 4.2/1, so for every lead screw turn I have 1024*4.2 = 4300.8 steps.
