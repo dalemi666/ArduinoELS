@@ -18,7 +18,7 @@ Arduino UNO based ELS (Electronic Lead Screw) controller for semi-CNC lathes
 * 1 x DC power supply
 
 # HARDWARE SETTINGS
-![ELS](img/ELS.png)
+![ELS](web/ELS.png)
 
 ## Connections
 * GPIO (2, 4) --> Quadrature encoder (lathe spindle) input (A, B)
@@ -30,7 +30,7 @@ Arduino UNO based ELS (Electronic Lead Screw) controller for semi-CNC lathes
 * H-Bridge outputs (A, B) --> Servo motor power lines 
 
 ## Encoders settings
-* AMT102 Encoders resolution set to 48 cpr --> [AMT102-V-datasheet.pdf](docs/AMT102-V-datasheet.pdf)
+* AMT102 Encoders resolution set to 48 cpr --> [AMT102-V-datasheet.pdf](web/AMT102-V-datasheet.pdf)
 
 # PROJECT DESCRIPTION
 * Work in progress...
