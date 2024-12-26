@@ -40,7 +40,7 @@ int    menuCheck      = 0;
 double moveDist       = 0;
 double endThread      = 0;
 int    screwDir       = 1;
-double alternateCut   = 4300.8 * (0.1 / distOneRev);  // E' lo spostamneto Dx alternato in aventi ed in dietro dell'utensile durante la filettatura. 4300.8 corripsonde ad un giro della vite madre, quindi 1.04 mm
+double alternateCut   = servoEncRes * (0.1 / distOneRev);  // E' lo spostamneto Dx alternato in aventi ed in dietro dell'utensile durante la filettatura. 4300.8 corripsonde ad un giro della vite madre, quindi 1.04 mm
 
 // serialComm
 long   currentMicros  = 0;
