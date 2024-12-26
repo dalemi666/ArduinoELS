@@ -54,6 +54,6 @@ void moveTool()
   while(micros() <= currentMicros + 200000 && menuCheck != 1);
   
   // Azzero l'uscita in tensione.
-  digitalWrite(10, 0); 
-  analogWrite (11, 0);
+  analogWrite(10, 0); 
+  analogWrite(11, 0);
 }

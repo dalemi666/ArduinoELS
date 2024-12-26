@@ -136,13 +136,18 @@ void setup()
   pinMode(10,OUTPUT);      // DIR
   pinMode(11,OUTPUT);      // PWM
 
-  digitalWrite(8,LOW);     // LOOP speed measurements
+  digitalWrite(8, LOW);    // LOOP speed measurements
   digitalWrite(9, LOW);    // Segnala asincronia
-  digitalWrite(10,LOW);    // DIR
-  analogWrite (11, 0);     // Motore fermo
+  analogWrite(10, 0);      // Motore fermo (SX)
+  analogWrite(11, 0);      // Motore fermo (DX)
 
-  // FREQUENZA PWM
-  TCCR2B = TCCR2B & 0b11111000 | 0x01; // PWM on port 3,11 Frequecy = 31250 Hz
+  // FREQUENZA PWM on pins 3,11
+  TCCR2B = TCCR2B & 0b11111000 | 0x01;    // PWM on port 3,11 Frequecy = 31250 Hz
+
+  // Frequenza PWM on pins 10 
+  TCCR1A = (1 << WGM11);                  // Enable Fast PWM mode, leave duty cycle for analogWrite()
+  TCCR1B = (TCCR1B & 0b11111000) | 0x01;  // Set prescaler to 1
+  ICR1 = 500;                             // Set TOP value for ~32 kHz frequency
 }
 
 /////////////////////////////////////////////////////////////////

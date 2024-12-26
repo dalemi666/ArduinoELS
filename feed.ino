@@ -37,6 +37,6 @@ void feed()
   }
   while(menuCheck != 1);
   // Spengo il motore 
-  digitalWrite(10, 0); 
-  analogWrite (11, 0);
+  analogWrite(10, 0); 
+  analogWrite(11, 0);
 }
